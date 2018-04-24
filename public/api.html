@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SunSmart Device Page</title>
+
+  <!-- Bootstap4 CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="assets/css/api.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" class="active">
+    <!-- Close Sidebar Button -->
+    <div id="dismiss">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>SunSmart</h3>
+    </div>
+
+    <ul class="components">
+      <p>Portable Health Expert</p>
+      <li>
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Applications</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li><a href="uv.html">Your UV</a></li>
+          <li><a href="#">Rencent Weather</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="device.html">Manage Device</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+      <li>
+        <a href="customer.html">Edit Profile</a>
+      </li>
+      <li class="active">
+        <a href="#">Developer API</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="navbar-header">
+        <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm navbar-btn">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="signin.html">SunSmart</a>
+      </div>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-lg fa-bell-o" aria-hidden="true"></i>
+              <span class="notification">5</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="customer.html" class="nav-link" href="#"><i class="fa fa-lg fa-user-o" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link">Welcome!</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <h1 class="text-center">UV Exposure API Documentation</h1>
+      <h5>
+            Leverage our powerful UV Exposure API to do amazing things!
+      </h5>
+
+      <p>
+        With our UV Exposure API you can request average UV exposure by two different methods (ZIP code or Latitude and Longitude)!
+      </p>
+      <div class="row container" style="padding-top:10px;" style="padding-top:10px;"><b>How do I get access?</b></div>
+      <div class="row">
+        <ul>
+          <li>Request for an API key, by clicking buttom below.</li>
+          <li>Use the API key provided to get UV information you need.</li>
+          <li>You can also <a style="color:blue" href="signin.html">Sign Up</a> for an account, if you want to upload your own UV exposure information</li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <h4 class="row" style="padding-top:10px;"><b>Base URL</b></h4>
+        <div class="row">
+          <b> http://ec2-18-221-206-206.us-east-2.compute.amazonaws.com:3000/api/averageUV </b>
+        </div>
+        <div class="row">
+          <b> https://ec2-18-221-206-206.us-east-2.compute.amazonaws.com:8080/api/averageUV </b>
+        </div>
+        <div class="row">
+          Supported Methods: GET
+        </div>
+        <h4 class="row" style="padding-top:10px;"><b>Request Parameters</b></h4>
+        <div class="row" style="padding-top:10px;"><b>key=[key]</b> <b>(REQUIRED)</b></div>
+
+        <div class="row">
+          <ul>
+            <li><code>key</code> - Your API Key. </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <h4 class="row" style="padding-top:10px;"><b>API Endpoints</b></h4>
+        <div class="row">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Required Parameters</th>
+                <th>Example(s)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Get observation by lat/lon</td>
+                <td>lat,lon</td>
+                <td>&amp;lat=38.123&amp;lon=-78.543</td>
+              </tr>
+              <tr>
+                <td>Get observation by zip code</td>
+                <td>zipcode</td>
+                <td>&amp;zipcode=85718</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="container">
+        <h4 class="row" style="padding-top:10px;"><b>Example Request:</b></h4>
+        <div class="row">
+          <pre><code style="http" class="http">https://ec2-18-221-206-206.us-east-2.compute.amazonaws.com:8080/api/averageUV?zipcode=85718&key={API_KEY}</code></pre>
+        </div>
+      </div>
+
+      <div class="card-block">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" placeholder="name..." id="name"><br>
+        <button id="createAPIkey" type="button" name="createAPIkey" class="btn btn-info"> Request API Key</button>
+      </div>
+
+      <div class="container" id="APIkeycont">
+        <p class="row" style="padding-top:10px;"><b>Your API Key is:</b></p>
+        <div class="row" id="APIKey">
+        </div>
+        <button id="okbt" type="button" name="okbt" class="btn btn-info"> OK</button>
+      </div>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- jquery 3.x CDN -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- jquery backstretch 2.04 CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js" integrity="sha256-V52dl3OFjoY+fYAkifhLJ7f1V7mZAKPGCQoWzoQxrEU=" crossorigin="anonymous"></script>
+    <!-- tether CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- Bootstrap4 CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <!-- my js -->
+    <script src="assets/js/api.js"></script>
+</body>
+
+</html>

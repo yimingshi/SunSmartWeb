@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SunSmart UV Page</title>
+  <!-- Bootstap4 CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="assets/css/uv.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" class="active">
+    <!-- Close Sidebar Button -->
+    <div id="dismiss">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>SunSmart</h3>
+    </div>
+
+    <ul class="components">
+      <p>Portable Health Expert</p>
+      <li>
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true">Applications</a>
+        <ul class="collapse list-unstyled show" id="homeSubmenu">
+          <li class="active"><a href="uv.html">Your UV</a></li>
+          <li><a href="weatherforecast.html">Rencent Weather</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="device.html">Manage Device</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+      <li>
+        <a href="customer.html">Edit Profile</a>
+      </li>
+      <li>
+        <a href="api.html">Developer API</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+
+      <div class="navbar-header">
+        <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm navbar-btn">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="signin.html">SunSmart</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fa fa-lg fa-bell-o" aria-hidden="true"></i>
+                <span class="notification">5</span>
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="customer.html"><i class="fa fa-lg fa-user-o" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link" id="logoutbtn">Log Out</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card" id="main-card">
+            <div class="card-header">
+              <h4 class="card-title">Rencent UV Index</h4>
+              <p class="card-text">With SunSmart portable devies, you can monitor your UV intake anytime!</p>
+            </div>
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="chart-container">
+                  <canvas id="myChart" class="myChart"></canvas>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card-block">
+                  <p class="card-text">Don't forget to apply sunscreen when UV is high!</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-block">
+              <button id="btnsunscreen" type="button" name="button" class="btn btn-info"> Applied Sunscreen?</button>
+            </div>
+          </div>
+          <div class="card" id="sunscreen-card">
+            <div class="card-header">
+              <h4 class="card-title">Your Sunscreen</h4>
+              <p class="card-text">Specify Your Sunscreen</p>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="card-block">
+                  <label class="card-text" for="timeSuncreen">When you have applied sunscreen?</label>
+                  <input type="text" name="timeSuncreen" placeholder="Year/Month/Day" class="card-text" id="timeSuncreen">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card-block">
+                  <label class="card-text" for="typeSuncreen">Type of sunscreen used?</label>
+                  <input type="text" name="typeSuncreen" placeholder="Type..." class="card-text" id="typeSuncreen">
+                </div>
+              </div>
+            </div>
+            <div class="card-block">
+              <button id="submitSunscreen" type="button" name="button" class="btn btn-info"> OK</button>
+              <button id="cancelSunscreen" type="button" name="button" class="btn btn-info"> Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Find UV around you!</h4>
+            </div>
+            <div class="card-block">
+              <label class="card-text" for="city">City:</label>
+              <input type="text" name="city" class="card-text" id="city">
+              <label class="card-text">----OR----</label><br>
+              <label class="card-text" for="zipcode">Zipcode:</label>
+              <input type="text" name="zipcode" class="card-text" id="zipcode">
+              <div class="form-group">
+                <button id="findCityUV" type="button" name="findCityUV" class="btn btn-info btn-sm"> Find</button>
+              </div>
+            </div>
+            <div class="card-block" id="cityUV">
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Health Tips</h4>
+              <button id="newTip" type="button" name="newTip" class="btn btn-info btn-sm"> New Tip</button>
+            </div>
+            <div class="card-block" id="healthTips">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- jquery 3.x CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- tether CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!-- chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <!-- my js -->
+  <script src="assets/js/uv.js"></script>
+</body>
+
+</html>

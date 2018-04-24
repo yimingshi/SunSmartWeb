@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SunSmart Customer Page</title>
+  <!-- Bootstap4 CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="assets/css/customer.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" class="active">
+    <!-- Close Sidebar Button -->
+    <div id="dismiss">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>SunSmart</h3>
+    </div>
+
+    <ul class="components">
+      <p>Portable Health Expert</p>
+      <li>
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Applications</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li><a href="uv.html">Your UV</a></li>
+          <li><a href="weatherforecast.html">Rencent Weather</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="device.html">Manage Device</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+      <li class="active">
+        <a href="customer.html">Edit Profile</a>
+      </li>
+      <li>
+        <a href="api.html">Developer API</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="navbar-header">
+        <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm navbar-btn">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="signin.html">SunSmart</a>
+      </div>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-lg fa-bell-o" aria-hidden="true"></i>
+              <span class="notification">5</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="customer.html"><i class="fa fa-lg fa-user-o" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link" id="logoutbtn">Log Out</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h4>Change Password</h4>
+            </div>
+            <div class="card-content">
+              <form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="passwordold-e">Old Password</label>
+                      <input type="password" class="form-control" id="passwordold-e">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="passwordnew-e">New Password</label>
+                      <input type="password" class="form-control" id="passwordnew-e">
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" id="passbtn-e">Change Password</button>
+              </form>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Edit Profile</h4>
+              <p>Complete your profile</p>
+            </div>
+            <div class="card-content">
+              <form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="firstname-e">Fist Name</label>
+                      <input type="text" class="form-control" id="firstname-e">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="lastname-e">Last Name</label>
+                      <input type="text" class="form-control" id="lastname-e">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="address-e">Adress</label>
+                      <input type="text" class="form-control" id="address-e">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="city-e">City</label>
+                      <input type="text" class="form-control" id="city-e">
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="state-e">State</label>
+                      <input type="text" class="form-control" id="state-e">
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label for="zipcode-e">Zip Code</label>
+                      <input type="text" class="form-control" id="zipcode-e">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>About Me</label>
+                      <div class="form-group">
+                        <label for="aboutme-e"> -- One loyal friend is worth ten thousand relatives.</label>
+                        <textarea class="form-control" rows="5" id="aboutme-e"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary pull-right" id="button-e">Update Profile</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-avatar">
+              <img class="img-fluid rounded" src="assets/img/portrait2.jpeg">
+            </div>
+            <div class="card-content">
+              <h6 id="showemail"></h6>
+              <h4 id="showname"></h4>
+              <p id="showintro">Ahh...It seems there nothing about yourself...</p>
+              <button type="submit" class="btn btn-primary btn-round pull-right">Change Portrait</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- jquery 3.x CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- tether CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!-- my js -->
+  <script src="assets/js/customer.js"></script>
+</body>
+
+</html>

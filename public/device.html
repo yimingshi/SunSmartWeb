@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SunSmart Device Page</title>
+
+  <!-- Bootstap4 CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="assets/css/device.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" class="active">
+    <!-- Close Sidebar Button -->
+    <div id="dismiss">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>SunSmart</h3>
+    </div>
+
+    <ul class="components">
+      <p>Portable Health Expert</p>
+      <li>
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Applications</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li><a href="uv.html">Your UV</a></li>
+          <li><a href="weatherforecast.html">Rencent Weather</a></li>
+        </ul>
+      </li>
+      <li class="active">
+        <a href="device.html">Manage Device</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+      <li>
+        <a href="customer.html">Edit Profile</a>
+      </li>
+      <li>
+        <a href="api.html">Developer API</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="navbar-header">
+        <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm navbar-btn">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="signin.html">SunSmart</a>
+      </div>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-lg fa-bell-o" aria-hidden="true"></i>
+              <span class="notification">5</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="customer.html"><i class="fa fa-lg fa-user-o" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link" id="logoutbtn">Log Out</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h4>Manage Device</h4>
+              <p>You can add new device and require an valid API key here!</p>
+            </div>
+            <div class="card-content">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Device Id</th>
+                    <th>API Key</th>
+                    <th>Last Connected</th>
+                  </tr>
+                </thead>
+                <tbody id="devicelist">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+
+            <div class="card-header">
+              <h5 id="regihead"><i class="fa fa-tablet" aria-hidden="true"></i> Register a New Device</h4>
+            </div>
+            <div id="regiblock" class="card-block" style="display:none">
+              <div class="form-group">
+                <label for="newdevice">New Device ID:</label>
+                <input type="text" id="newdevice" name="newdevice" class="form-control" placeholder="device ID ...">
+                <p id="feedback1" style="color:red;margin-top:2px"><p>
+              </div>
+              <div class="form-group">
+                <button id="registerDevice" class="btn btn-sm btn-info">Register</button>
+                <button id="regicancel" class="btn btn-sm btn-warning">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h5 id="delehead"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete an Old Device</h4>
+            </div>
+            <div id="deleblock" class="card-block" style="display:none">
+              <div class="form-group">
+                <label for="olddevice">Device to be deleted:</label>
+                <input type="text" id="olddevice" name="olddevice" class="form-control" placeholder="device ID ...">
+                <p id="feedback2" style="color:red;margin-top:2px"><p>
+              </div>
+              <div class="form-group">
+                <button id="cancelDevice" class="btn btn-sm btn-danger">Delete</button>
+                <button id="delecancel" class="btn btn-sm btn-warning">Cancel</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- jquery 3.x CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- jquery backstretch 2.04 CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js" integrity="sha256-V52dl3OFjoY+fYAkifhLJ7f1V7mZAKPGCQoWzoQxrEU=" crossorigin="anonymous"></script>
+  <!-- tether CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!-- my js -->
+  <script src="assets/js/device.js"></script>
+</body>
+
+</html>

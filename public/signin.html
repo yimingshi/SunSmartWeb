@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+  <title>SunSmart Login &amp; Register Page</title>
+
+  <!-- Bootstap4 CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="assets/css/signin.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+</head>
+
+<body>
+
+  <!-- Top content -->
+  <div class="top-content">
+
+    <div class="inner-bg">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-8 offset-sm-2 text">
+            <h1><strong>SunSmart</strong> Login &amp; Register</h1>
+            <div class="description">
+              <p>Welcome to use SunSmart Services!</p>
+              <a href="api.html">Develper? See our latest API!</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="form-box">
+              <div class="form-top">
+                <div class="form-top-left">
+                  <h3>Login to our site</h3>
+                  <p>Enter Email and password to log on:</p>
+                </div>
+                <div class="form-top-right">
+                  <i class="fa fa-lock"></i>
+                </div>
+              </div>
+              <div class="form-bottom">
+                <p class="loginnoti"></p>
+                <form role="form" action="" method="get" class="login-form">
+                  <div class="form-group">
+                    <label class="sr-only" for="login-email">Email</label>
+                    <input type="email" name="login-email" placeholder="Email..." class="form-control" id="login-email">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="login-password">Password</label>
+                    <input type="password" name="login-password" placeholder="Password..." class="form-control" id="login-password">
+                  </div>
+                  <button type="submit" class="btn">Sign in!</button>
+                </form>
+                <p class="loginwarning"></p>
+              </div>
+            </div>
+
+            <div class="social-login">
+              <h3>...or login with:</h3>
+              <div class="social-login-buttons">
+                <a class="btn btn-link-1 btn-link-1-facebook" href="#"><i class="fa fa-facebook"></i> Facebook</a>
+                <a class="btn btn-link-1 btn-link-1-twitter" href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                <a class="btn btn-link-1 btn-link-1-google-plus" href="#"><i class="fa fa-google-plus"></i> Google Plus</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-sm-1 middle-border"></div>
+          <div class="col-sm-1"></div>
+
+          <div class="col-sm-5">
+            <div class="form-box">
+              <div class="form-top">
+                <div class="form-top-left">
+                  <h3>Sign up now</h3>
+                  <p>Fill in the form below to get instant access:</p>
+                </div>
+                <div class="form-top-right">
+                  <i class="fa fa-key"></i>
+                </div>
+              </div>
+              <div class="form-bottom">
+                <form role="form" action="" method="post" class="registration-form">
+                  <div class="form-group">
+                    <label class="sr-only" for="regi-email">Email</label>
+                    <input type="email" name="regi-email" placeholder="Email..." class="form-control" id="regi-email">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="regi-deviceid">Device Id</label>
+                    <input type="text" name="regi-deviceid" placeholder="Device ID..." class="form-control" id="regi-deviceid">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="regi-password">Password</label>
+                    <input type="password" name="regi-password" placeholder="Password..." class="form-control" id="regi-password">
+                  </div>
+                  <div class="form-group">
+                    <label class="sr-only" for="regi-password-confirm">Password</label>
+                    <input type="password" name="regi-password-confirm" placeholder="Confirm Password..." class="form-control" id="regi-password-confirm">
+                  </div>
+                  <button type="submit" class="btn">Sign me up!</button>
+                </form>
+                <p class="regiwarning"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 offset-sm-2">
+          <div class="footer-border"></div>
+          <p>Made by Chris in <strong>Tucson</strong> having a lot of fun. <i class="fa fa-smile-o"></i></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jquery 3.x CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- jquery backstretch 2.04 CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js" integrity="sha256-V52dl3OFjoY+fYAkifhLJ7f1V7mZAKPGCQoWzoQxrEU=" crossorigin="anonymous"></script>
+  <!-- tether CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!-- My js -->
+  <script src="assets/js/signin.js"></script>
+
+</body>
+
+</html>

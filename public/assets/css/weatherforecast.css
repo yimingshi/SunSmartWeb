@@ -1,0 +1,268 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.2em;
+  color: #999;
+}
+
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+
+/* ---------------------------------------------------
+    NAVBAR STYLE
+----------------------------------------------------- */
+
+.navbar {
+  padding: 5px 5px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-header {
+  width: 200px;
+}
+
+.navbar-brand {
+  width: 100px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+  width: 20px;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.nav-item a {
+  display: inline-block;
+  width: 45px;
+  position: relative;
+}
+
+.nav-item p {
+  display: inline-block;
+  margin-bottom: 0;
+  cursor: default;
+}
+
+.navbar .notification {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: 1px solid #FFF;
+  font-size: 9px;
+  background: #f44336;
+  color: #FFFFFF;
+  min-width: 20px;
+  padding: 0px 5px;
+  height: 20px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 19px;
+  vertical-align: middle;
+  display: block;
+}
+
+.nav-link {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.navbar-toggler {
+  margin-top: 3px;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.navbar-toggler-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+  min-width: 225px;
+  max-width: 225px;
+  top: 0;
+  left: -225px;
+  height: 100vh;
+  background: #7386D5;
+  position: fixed;
+  z-index: 999;
+  color: #fff;
+  transition: all 0.3s;
+  overflow-y: scroll;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #6d7fcc;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #7386D5;
+  background: #fff;
+}
+
+#sidebar ul li.active>a, a[aria-expanded="true"] {
+  color: #fff;
+  background: darkblue;
+}
+
+#dismiss {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background: #7386D5;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+#dismiss:hover {
+  background: #fff;
+  color: #7386D5;
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6d7fcc;
+}
+
+.overlay {
+  /* full screen */
+  width: 100vw;
+  height: 100vh;
+  /* transparent black */
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 998;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+  width: calc(100% - 225px);
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#content.active {
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------
+    CARD STYLE
+----------------------------------------------------- */
+
+.card {
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px;
+}
+
+
+/*#main-card {
+  min-height: 300px;
+  background-image: url("../img/background_california.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}*/
+
+
+/* ---------------------------------------------------
+    Chart
+----------------------------------------------------- */
+
+.chart-container {
+  position: relative;
+}
+
+.myChart {
+  display: block;
+  min-height: 250px;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+  #sidebar {
+    left: 0;
+  }
+  #sidebar.active {
+    left: -225px;
+  }
+  #content {
+    width: 100%;
+  }
+  #sidebarCollapse span {
+    display: none;
+  }
+}

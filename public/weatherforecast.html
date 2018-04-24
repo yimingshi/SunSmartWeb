@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SunSmart Weather Forecast Page</title>
+  <!-- Bootstap4 CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="assets/css/weatherforecast.css">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <!-- Sidebar Holder -->
+  <nav id="sidebar" class="active">
+    <!-- Close Sidebar Button -->
+    <div id="dismiss">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+    </div>
+    <div class="sidebar-header">
+      <h3>SunSmart</h3>
+    </div>
+
+    <ul class="components">
+      <p>Portable Health Expert</p>
+      <li>
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true">Applications</a>
+        <ul class="collapse list-unstyled show" id="homeSubmenu">
+          <li><a href="uv.html">Your UV</a></li>
+          <li class="active"><a href="weatherforecast.html">Rencent Weather</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="device.html">Manage Device</a>
+      </li>
+      <li>
+        <a href="#">Notifications</a>
+      </li>
+      <li>
+        <a href="customer.html">Edit Profile</a>
+      </li>
+      <li>
+        <a href="api.html">Developer API</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="navbar-header">
+        <button type="button" id="sidebarCollapse" class="btn btn-info btn-sm navbar-btn">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="signin.html">SunSmart</a>
+      </div>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="fa fa-lg fa-bell-o" aria-hidden="true"></i>
+              <span class="notification">5</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="customer.html"><i class="fa fa-lg fa-user-o" aria-hidden="true"></i></a>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link" id="logoutbtn">Log Out</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card" id="main-card">
+            <div class="card-header">
+              <h4 class="card-title">Weather Forecast</h4>
+              <p class="card-text">With SunSmart portable devies, you can view weather forecast anytime!</p>
+            </div>
+            <div class="card-block">
+              <form>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group" style="padding:2px">
+                      <label for="lon">Longitude</label>
+                      <input type="text" class="form-control" id="lon" value="-110.9265">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group" style="padding:2px">
+                      <label for="lat">Latitude</label>
+                      <input type="text" class="form-control" id="lat" value="32.2217">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group" style="padding:2px">
+                      <button type="submit" class="btn btn-primary btn-sm" id="search">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div id="chartcontainer1" class="chart-container">
+                  <!-- <canvas id="myChart1" class="myChart"></canvas> -->
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div id="chartcontainer2" class="chart-container">
+                  <!-- <canvas id="myChart2" class="myChart"></canvas> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="card-header">
+              <p>* Data provided by weatherbit.io</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+
+  <!-- jquery 3.x CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- tether CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- Bootstrap4 CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!-- chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <!-- my js -->
+  <script src="assets/js/weatherforecast.js"></script>
+</body>
+
+</html>
